@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+   tinier-shortener-service:
+      build: .
+      ports:
+         - "3012:3012"
+      restart: always
+      environment: 
+         - CASSANDRA_URL=23.234.197.146
+         - CASSANDRA_KEYSPACE=tinier
+         - CASSANDRA_USERNAME=cassandra
+         - CASSANDRA_PASSWORD=cassandra3
+         - PORT=3012
+         - USER_JWT_SECRET=habE1zf5LqZKExa5LqZnesRvN5DEUfKM32lYnsXGAbUfKE1zM32oM0vqGgkstcTBgCBQmQ0dNodO
+         - MAIN_URL=http://localhost:3012/api/v1/short
+         - RDB_ADDR=localhost:6281
+         - RDB_PASSWORD=yK3arYCaLT7ySg9g6S
