@@ -10,4 +10,4 @@ $ docker-compose up --build
 ```
 ## Design
 
-![Ttinier](.tinier-design?raw=true)
+![Ttinier](tinier-design?raw=true)
