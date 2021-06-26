@@ -6,7 +6,7 @@ services:
          - "3012:3012"
       restart: always
       environment: 
-         - CASSANDRA_URL=23.234.197.146
+         - CASSANDRA_URL=host.docker.internal
          - CASSANDRA_KEYSPACE=tinier
          - CASSANDRA_USERNAME=cassandra
          - CASSANDRA_PASSWORD=cassandra3
