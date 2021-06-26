@@ -160,10 +160,12 @@ func (u *url) Delete(d *domain.DeleteHashRequest) *errs.Err {
 
 	if d.User != "" {
 		if d.User == url.User {
+			u.cacheRepo.Delete(d.Hash)
 			return u.urlRepo.Delete(d.Hash, d.User)
 		}
 	} else {
 		if d.Secret == url.Secret {
+			u.cacheRepo.Delete(d.Hash)
 			return u.urlRepo.Delete(d.Hash, d.User)
 		}
 	}

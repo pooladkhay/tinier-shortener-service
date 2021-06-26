@@ -10,6 +10,7 @@ import (
 type Cache interface {
 	Cache(hash, url string, exp int)
 	GetCache(hash string) (*string, *errs.Err)
+	Delete(hash string)
 }
 
 type cache struct {
@@ -30,4 +31,8 @@ func (c *cache) GetCache(hash string) (*string, *errs.Err) {
 		return nil, nil
 	}
 	return &result, nil
+}
+
+func (c *cache) Delete(hash string) {
+	c.rdb.Client.Del(*c.rdb.Ctx, hash).Err()
 }
